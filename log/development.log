@@ -1536,3 +1536,582 @@ Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.9ms | Allocations: 3338)
   [1m[36mRestaurantPiza Create (0.5ms)[0m  [1m[32mINSERT INTO "restaurant_pizas" ("price", "restaurant_id", "pizza_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["price", 17.0], ["restaurant_id", 4], ["pizza_id", 4], ["created_at", "2023-03-20 09:12:23.958920"], ["updated_at", "2023-03-20 09:12:23.958920"]]
   [1m[36mTRANSACTION (4.0ms)[0m  [1m[36mcommit transaction[0m
   [1m[36mRestaurantPiza Load (0.3ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" ORDER BY "restaurant_pizas"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/restaurants" for 127.0.0.1 at 2023-03-20 12:17:04 +0300
+Processing by RestaurantsController#index as HTML
+  [1m[36mRestaurant Load (1.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+Completed 200 OK in 62ms (Views: 43.7ms | ActiveRecord: 2.5ms | Allocations: 7498)
+
+
+Started GET "/restaurants" for ::1 at 2023-03-20 12:30:36 +0300
+Processing by RestaurantsController#index as */*
+  Parameters: {"price"=>40.0, "restaurant_id"=>6, "pizza_id"=>2, "restaurant"=>{}}
+  [1m[36mRestaurant Load (0.5ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+Completed 200 OK in 9ms (Views: 8.5ms | ActiveRecord: 2.6ms | Allocations: 4818)
+
+
+Started GET "/restaurants/2" for ::1 at 2023-03-20 12:30:41 +0300
+Processing by RestaurantsController#show as */*
+  Parameters: {"price"=>40.0, "restaurant_id"=>6, "pizza_id"=>2, "id"=>"2", "restaurant"=>{}}
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/restaurants_controller.rb:12:in `show'
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.1ms | Allocations: 3565)
+
+
+  
+NoMethodError (undefined method `Pizza' for #<Restaurant:0x00007f70d0d81740>
+Did you mean?  Pizzas
+               Pizzas=):
+  
+app/controllers/restaurants_controller.rb:14:in `show'
+Started GET "/restaurants/2" for ::1 at 2023-03-20 12:30:59 +0300
+Processing by RestaurantsController#show as */*
+  Parameters: {"price"=>40.0, "restaurant_id"=>6, "pizza_id"=>2, "id"=>"2", "restaurant"=>{}}
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/restaurants_controller.rb:12:in `show'
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.7ms | Allocations: 1921)
+
+
+  
+ActiveRecord::HasManyThroughAssociationNotFoundError (Could not find the association :RestaurantPiza in model Restaurant
+Did you mean?  RestaurantPizas):
+  
+app/controllers/restaurants_controller.rb:14:in `show'
+Started GET "/restaurants/2" for ::1 at 2023-03-20 12:32:19 +0300
+Processing by RestaurantsController#show as */*
+  Parameters: {"price"=>40.0, "restaurant_id"=>6, "pizza_id"=>2, "id"=>"2", "restaurant"=>{}}
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/restaurants_controller.rb:12:in `show'
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 2.1ms | Allocations: 4708)
+
+
+  
+NoMethodError (undefined method `Pizza' for #<Restaurant:0x00007f70cc05b268>
+Did you mean?  Pizzas
+               Pizzas=):
+  
+app/controllers/restaurants_controller.rb:14:in `show'
+Started GET "/restaurants/2" for ::1 at 2023-03-20 12:32:37 +0300
+Processing by RestaurantsController#show as */*
+  Parameters: {"price"=>40.0, "restaurant_id"=>6, "pizza_id"=>2, "id"=>"2", "restaurant"=>{}}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/restaurants_controller.rb:12:in `show'
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 1.1ms | Allocations: 4710)
+
+
+  
+NoMethodError (undefined method `pizzas' for #<Restaurant:0x0000565087f99920>
+Did you mean?  Pizzas
+               Pizzas=):
+  
+app/controllers/restaurants_controller.rb:14:in `show'
+Started GET "/restaurants/2" for ::1 at 2023-03-20 12:32:48 +0300
+Processing by RestaurantsController#show as */*
+  Parameters: {"price"=>40.0, "restaurant_id"=>6, "pizza_id"=>2, "id"=>"2", "restaurant"=>{}}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/restaurants_controller.rb:12:in `show'
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.8ms | Allocations: 4746)
+
+
+  
+NoMethodError (undefined method `pizza' for #<Restaurant:0x00007f70d0de8828>
+Did you mean?  Pizzas
+               Pizzas=):
+  
+app/controllers/restaurants_controller.rb:14:in `show'
+Started GET "/restaurants/2" for ::1 at 2023-03-20 12:33:31 +0300
+Processing by RestaurantsController#show as */*
+  Parameters: {"price"=>40.0, "restaurant_id"=>6, "pizza_id"=>2, "id"=>"2", "restaurant"=>{}}
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/restaurants_controller.rb:12:in `show'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 2]]
+  ↳ app/controllers/restaurants_controller.rb:14:in `show'
+Completed 200 OK in 12ms (Views: 7.2ms | ActiveRecord: 5.5ms | Allocations: 7314)
+
+
+Started GET "/restaurants/2" for ::1 at 2023-03-20 12:34:31 +0300
+  
+SyntaxError (/home/rawllings/Development/code/phase4/pizza-restaurant/restaurant-app/app/controllers/restaurants_controller.rb:14: syntax error, unexpected ',', expecting =>
+...[:id, :name, :ingredients] } }, except: [:created_at, :updat...
+...                              ^
+/home/rawllings/Development/code/phase4/pizza-restaurant/restaurant-app/app/controllers/restaurants_controller.rb:14: syntax error, unexpected ',', expecting `end'
+...pt: [:created_at, :updated_at], status: :ok
+...                              ^
+):
+  
+app/controllers/restaurants_controller.rb:14: syntax error, unexpected ',', expecting =>
+app/controllers/restaurants_controller.rb:14: syntax error, unexpected ',', expecting `end'
+app/controllers/restaurants_controller.rb:14: syntax error, unexpected ',', expecting =>
+app/controllers/restaurants_controller.rb:14: syntax error, unexpected ',', expecting `end'
+Started GET "/restaurants/2" for ::1 at 2023-03-20 12:35:15 +0300
+Processing by RestaurantsController#show as */*
+  Parameters: {"price"=>40.0, "restaurant_id"=>6, "pizza_id"=>2, "id"=>"2", "restaurant"=>{}}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/restaurants_controller.rb:12:in `show'
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 1.1ms | Allocations: 4709)
+
+
+  
+NoMethodError (undefined method `pizzas' for #<Restaurant:0x00007f70dd0188d0>
+Did you mean?  Pizzas
+               Pizzas=):
+  
+app/controllers/restaurants_controller.rb:14:in `show'
+Started GET "/restaurants/2" for ::1 at 2023-03-20 12:35:54 +0300
+Processing by RestaurantsController#show as */*
+  Parameters: {"price"=>40.0, "restaurant_id"=>6, "pizza_id"=>2, "id"=>"2", "restaurant"=>{}}
+  [1m[36mRestaurant Load (0.4ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/restaurants_controller.rb:21:in `show'
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 3.1ms | Allocations: 4709)
+
+
+  
+NoMethodError (undefined method `pizzas' for #<Restaurant:0x00007f70d058cd00>
+Did you mean?  Pizzas
+               Pizzas=):
+  
+app/controllers/restaurants_controller.rb:23:in `show'
+Started GET "/restaurants/2" for ::1 at 2023-03-20 12:36:33 +0300
+Processing by RestaurantsController#show as */*
+  Parameters: {"price"=>40.0, "restaurant_id"=>6, "pizza_id"=>2, "id"=>"2", "restaurant"=>{}}
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/restaurants_controller.rb:21:in `show'
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 5.9ms | Allocations: 4726)
+
+
+  
+NoMethodError (undefined method `pizza' for #<Restaurant:0x00007f70c408cac8>
+Did you mean?  Pizzas
+               Pizzas=):
+  
+app/controllers/restaurants_controller.rb:23:in `show'
+Started GET "/restaurants/2" for ::1 at 2023-03-20 12:36:53 +0300
+Processing by RestaurantsController#show as */*
+  Parameters: {"price"=>40.0, "restaurant_id"=>6, "pizza_id"=>2, "id"=>"2", "restaurant"=>{}}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/restaurants_controller.rb:21:in `show'
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.9ms | Allocations: 1890)
+
+
+  
+ActiveRecord::HasManyThroughAssociationNotFoundError (Could not find the association :RestaurantPiza in model Restaurant
+Did you mean?  RestaurantPizas):
+  
+app/controllers/restaurants_controller.rb:23:in `show'
+Started GET "/restaurants/2" for ::1 at 2023-03-20 12:37:07 +0300
+Processing by RestaurantsController#show as */*
+  Parameters: {"price"=>40.0, "restaurant_id"=>6, "pizza_id"=>2, "id"=>"2", "restaurant"=>{}}
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/restaurants_controller.rb:21:in `show'
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 1.0ms | Allocations: 4707)
+
+
+  
+NoMethodError (undefined method `Pizza' for #<Restaurant:0x00007f70d8222018>
+Did you mean?  Pizzas
+               Pizzas=):
+  
+app/controllers/restaurants_controller.rb:23:in `show'
+Started GET "/pizzas" for ::1 at 2023-03-20 12:37:32 +0300
+Processing by PizzasController#index as */*
+  Parameters: {"price"=>40.0, "restaurant_id"=>6, "pizza_id"=>2, "pizza"=>{}}
+  [1m[36mPizza Load (0.2ms)[0m  [1m[34mSELECT "pizzas".* FROM "pizzas"[0m
+  ↳ app/controllers/pizzas_controller.rb:4:in `index'
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 1.0ms | Allocations: 3297)
+
+
+Started GET "/restaurants" for ::1 at 2023-03-20 12:37:53 +0300
+Processing by RestaurantsController#index as */*
+  Parameters: {"price"=>40.0, "restaurant_id"=>6, "pizza_id"=>2, "restaurant"=>{}}
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.2ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 2]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 3]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 4]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 5]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 6]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 7]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 8]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 9]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 10]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 11]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 12]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 13]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 14]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 15]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 16]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 17]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 18]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 19]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 20]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 21]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 22]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 23]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 24]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 25]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 26]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 27]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 28]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 29]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 30]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+Completed 200 OK in 63ms (Views: 58.9ms | ActiveRecord: 3.8ms | Allocations: 29665)
+
+
+Started GET "/restaurants" for ::1 at 2023-03-20 12:38:51 +0300
+Processing by RestaurantsController#index as */*
+  Parameters: {"price"=>40.0, "restaurant_id"=>6, "pizza_id"=>2, "restaurant"=>{}}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 2]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 3]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.2ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 4]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 5]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 6]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 7]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 8]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 9]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 10]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 11]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 12]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 13]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 14]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 15]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 16]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 17]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 18]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 19]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 20]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 21]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 22]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 23]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 24]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 25]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 26]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 27]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 28]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 29]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 30]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+Completed 200 OK in 65ms (Views: 61.1ms | ActiveRecord: 4.7ms | Allocations: 30824)
+
+
+Started GET "/restaurants/3" for ::1 at 2023-03-20 12:39:00 +0300
+Processing by RestaurantsController#show as */*
+  Parameters: {"price"=>40.0, "restaurant_id"=>6, "pizza_id"=>2, "id"=>"3", "restaurant"=>{}}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/restaurants_controller.rb:21:in `show'
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.2ms | Allocations: 748)
+
+
+  
+ActiveRecord::HasManyThroughAssociationNotFoundError (Could not find the association :RestaurantPiza in model Restaurant
+Did you mean?  RestaurantPizas):
+  
+app/controllers/restaurants_controller.rb:23:in `show'
+Started GET "/restaurants" for ::1 at 2023-03-20 12:39:18 +0300
+Processing by RestaurantsController#index as */*
+  Parameters: {"price"=>40.0, "restaurant_id"=>6, "pizza_id"=>2, "restaurant"=>{}}
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 4.7ms | Allocations: 2263)
+
+
+  
+ActiveRecord::HasManyThroughAssociationNotFoundError (Could not find the association :RestaurantPiza in model Restaurant
+Did you mean?  RestaurantPizas):
+  
+app/controllers/restaurants_controller.rb:6:in `index'
+Started GET "/restaurants" for ::1 at 2023-03-20 12:39:58 +0300
+Processing by RestaurantsController#index as */*
+  Parameters: {"price"=>40.0, "restaurant_id"=>6, "pizza_id"=>2, "restaurant"=>{}}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.8ms | Allocations: 4905)
+
+
+  
+ActiveRecord::HasManyThroughSourceAssociationNotFoundError (Could not find the source association(s) "Pizza" or :Pizzas in model RestaurantPiza. Try 'has_many :Pizzas, :through => :RestaurantPizas, :source => <name>'. Is it one of restaurant or pizza?):
+  
+app/controllers/restaurants_controller.rb:6:in `index'
+Started GET "/restaurants" for ::1 at 2023-03-20 12:40:43 +0300
+Processing by RestaurantsController#index as */*
+  Parameters: {"price"=>40.0, "restaurant_id"=>6, "pizza_id"=>2, "restaurant"=>{}}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 2]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 3]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 4]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 5]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.2ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 6]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 7]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.2ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 8]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 9]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 10]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 11]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 12]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 13]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 14]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 15]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 16]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 17]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 18]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.2ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 19]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 20]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.2ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 21]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 22]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 23]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 24]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 25]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 26]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 27]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 28]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 29]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 30]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+Completed 200 OK in 71ms (Views: 67.0ms | ActiveRecord: 5.2ms | Allocations: 30846)
+
+
+Started GET "/restaurants" for ::1 at 2023-03-20 12:43:06 +0300
+Processing by RestaurantsController#index as */*
+  Parameters: {"price"=>40.0, "restaurant_id"=>6, "pizza_id"=>2, "restaurant"=>{}}
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 2.8ms | Allocations: 5054)
+
+
+  
+NoMethodError (undefined method `RestaurantPizas' for #<Restaurant:0x00007f70d0bc9ec0>
+Did you mean?  restaurantPizas
+               restaurantPizas=
+               restaurantPiza_ids
+               restaurantPiza_ids=):
+  
+app/controllers/restaurants_controller.rb:6:in `index'
+Started GET "/restaurants" for ::1 at 2023-03-20 12:43:19 +0300
+Processing by RestaurantsController#index as */*
+  Parameters: {"price"=>40.0, "restaurant_id"=>6, "pizza_id"=>2, "restaurant"=>{}}
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 2]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 3]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (1.6ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 4]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 5]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 6]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 7]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 8]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 9]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 10]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.2ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 11]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 12]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 13]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 14]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (1.4ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 15]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 16]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 17]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 18]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 19]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 20]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 21]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 22]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 23]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 24]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 25]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 26]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 27]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 28]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 29]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 30]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+Completed 200 OK in 225ms (Views: 217.6ms | ActiveRecord: 7.6ms | Allocations: 30801)
+
+
+Started GET "/restaurants" for ::1 at 2023-03-20 12:43:37 +0300
+Processing by RestaurantsController#index as */*
+  Parameters: {"price"=>40.0, "restaurant_id"=>6, "pizza_id"=>2, "restaurant"=>{}}
+  [1m[36mRestaurant Load (1.4ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mPizza Load (0.2ms)[0m  [1m[34mSELECT "pizzas".* FROM "pizzas" INNER JOIN "restaurant_pizas" ON "pizzas"."id" = "restaurant_pizas"."pizza_id" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 2]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mPizza Load (0.1ms)[0m  [1m[34mSELECT "pizzas".* FROM "pizzas" INNER JOIN "restaurant_pizas" ON "pizzas"."id" = "restaurant_pizas"."pizza_id" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 3]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mPizza Load (0.1ms)[0m  [1m[34mSELECT "pizzas".* FROM "pizzas" INNER JOIN "restaurant_pizas" ON "pizzas"."id" = "restaurant_pizas"."pizza_id" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 4]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mPizza Load (0.1ms)[0m  [1m[34mSELECT "pizzas".* FROM "pizzas" INNER JOIN "restaurant_pizas" ON "pizzas"."id" = "restaurant_pizas"."pizza_id" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 5]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mPizza Load (0.1ms)[0m  [1m[34mSELECT "pizzas".* FROM "pizzas" INNER JOIN "restaurant_pizas" ON "pizzas"."id" = "restaurant_pizas"."pizza_id" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 6]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mPizza Load (0.1ms)[0m  [1m[34mSELECT "pizzas".* FROM "pizzas" INNER JOIN "restaurant_pizas" ON "pizzas"."id" = "restaurant_pizas"."pizza_id" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 7]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mPizza Load (0.1ms)[0m  [1m[34mSELECT "pizzas".* FROM "pizzas" INNER JOIN "restaurant_pizas" ON "pizzas"."id" = "restaurant_pizas"."pizza_id" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 8]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mPizza Load (0.1ms)[0m  [1m[34mSELECT "pizzas".* FROM "pizzas" INNER JOIN "restaurant_pizas" ON "pizzas"."id" = "restaurant_pizas"."pizza_id" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 9]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mPizza Load (0.1ms)[0m  [1m[34mSELECT "pizzas".* FROM "pizzas" INNER JOIN "restaurant_pizas" ON "pizzas"."id" = "restaurant_pizas"."pizza_id" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 10]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mPizza Load (0.1ms)[0m  [1m[34mSELECT "pizzas".* FROM "pizzas" INNER JOIN "restaurant_pizas" ON "pizzas"."id" = "restaurant_pizas"."pizza_id" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 11]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mPizza Load (0.1ms)[0m  [1m[34mSELECT "pizzas".* FROM "pizzas" INNER JOIN "restaurant_pizas" ON "pizzas"."id" = "restaurant_pizas"."pizza_id" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 12]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mPizza Load (0.1ms)[0m  [1m[34mSELECT "pizzas".* FROM "pizzas" INNER JOIN "restaurant_pizas" ON "pizzas"."id" = "restaurant_pizas"."pizza_id" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 13]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mPizza Load (0.1ms)[0m  [1m[34mSELECT "pizzas".* FROM "pizzas" INNER JOIN "restaurant_pizas" ON "pizzas"."id" = "restaurant_pizas"."pizza_id" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 14]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mPizza Load (0.1ms)[0m  [1m[34mSELECT "pizzas".* FROM "pizzas" INNER JOIN "restaurant_pizas" ON "pizzas"."id" = "restaurant_pizas"."pizza_id" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 15]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mPizza Load (0.1ms)[0m  [1m[34mSELECT "pizzas".* FROM "pizzas" INNER JOIN "restaurant_pizas" ON "pizzas"."id" = "restaurant_pizas"."pizza_id" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 16]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mPizza Load (0.1ms)[0m  [1m[34mSELECT "pizzas".* FROM "pizzas" INNER JOIN "restaurant_pizas" ON "pizzas"."id" = "restaurant_pizas"."pizza_id" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 17]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mPizza Load (0.1ms)[0m  [1m[34mSELECT "pizzas".* FROM "pizzas" INNER JOIN "restaurant_pizas" ON "pizzas"."id" = "restaurant_pizas"."pizza_id" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 18]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mPizza Load (0.1ms)[0m  [1m[34mSELECT "pizzas".* FROM "pizzas" INNER JOIN "restaurant_pizas" ON "pizzas"."id" = "restaurant_pizas"."pizza_id" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 19]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mPizza Load (0.1ms)[0m  [1m[34mSELECT "pizzas".* FROM "pizzas" INNER JOIN "restaurant_pizas" ON "pizzas"."id" = "restaurant_pizas"."pizza_id" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 20]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mPizza Load (0.1ms)[0m  [1m[34mSELECT "pizzas".* FROM "pizzas" INNER JOIN "restaurant_pizas" ON "pizzas"."id" = "restaurant_pizas"."pizza_id" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 21]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mPizza Load (0.1ms)[0m  [1m[34mSELECT "pizzas".* FROM "pizzas" INNER JOIN "restaurant_pizas" ON "pizzas"."id" = "restaurant_pizas"."pizza_id" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 22]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mPizza Load (0.1ms)[0m  [1m[34mSELECT "pizzas".* FROM "pizzas" INNER JOIN "restaurant_pizas" ON "pizzas"."id" = "restaurant_pizas"."pizza_id" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 23]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mPizza Load (0.1ms)[0m  [1m[34mSELECT "pizzas".* FROM "pizzas" INNER JOIN "restaurant_pizas" ON "pizzas"."id" = "restaurant_pizas"."pizza_id" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 24]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mPizza Load (0.1ms)[0m  [1m[34mSELECT "pizzas".* FROM "pizzas" INNER JOIN "restaurant_pizas" ON "pizzas"."id" = "restaurant_pizas"."pizza_id" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 25]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mPizza Load (0.1ms)[0m  [1m[34mSELECT "pizzas".* FROM "pizzas" INNER JOIN "restaurant_pizas" ON "pizzas"."id" = "restaurant_pizas"."pizza_id" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 26]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mPizza Load (0.1ms)[0m  [1m[34mSELECT "pizzas".* FROM "pizzas" INNER JOIN "restaurant_pizas" ON "pizzas"."id" = "restaurant_pizas"."pizza_id" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 27]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mPizza Load (0.1ms)[0m  [1m[34mSELECT "pizzas".* FROM "pizzas" INNER JOIN "restaurant_pizas" ON "pizzas"."id" = "restaurant_pizas"."pizza_id" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 28]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mPizza Load (0.1ms)[0m  [1m[34mSELECT "pizzas".* FROM "pizzas" INNER JOIN "restaurant_pizas" ON "pizzas"."id" = "restaurant_pizas"."pizza_id" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 29]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+  [1m[36mPizza Load (0.1ms)[0m  [1m[34mSELECT "pizzas".* FROM "pizzas" INNER JOIN "restaurant_pizas" ON "pizzas"."id" = "restaurant_pizas"."pizza_id" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 30]]
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+Completed 200 OK in 147ms (Views: 140.9ms | ActiveRecord: 5.9ms | Allocations: 41903)
+
+
+Started GET "/restaurants/2" for ::1 at 2023-03-20 12:43:53 +0300
+Processing by RestaurantsController#show as */*
+  Parameters: {"price"=>40.0, "restaurant_id"=>6, "pizza_id"=>2, "id"=>"2", "restaurant"=>{}}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/restaurants_controller.rb:21:in `show'
+  [1m[36mPizza Load (0.1ms)[0m  [1m[34mSELECT "pizzas".* FROM "pizzas" INNER JOIN "restaurant_pizas" ON "pizzas"."id" = "restaurant_pizas"."pizza_id" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 2]]
+  ↳ app/controllers/restaurants_controller.rb:23:in `show'
+Completed 200 OK in 17ms (Views: 11.5ms | ActiveRecord: 1.8ms | Allocations: 9984)
+
+
