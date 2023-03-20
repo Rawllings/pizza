@@ -11,7 +11,7 @@ end
 def show
     restaurants = Restaurant.find_by(id: params[:id])
     if restaurants
-        render json: restaurants, includes: :Pizza, status: :ok
+        render json: restaurants, include: :RestaurantPizas, status: :ok
     else
         render json: { error: "Restaurant not found" }, status: :not_found
     end

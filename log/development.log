@@ -1077,3 +1077,199 @@ Processing by RestaurantsController#index as HTML
 Completed 200 OK in 11ms (Views: 10.3ms | ActiveRecord: 0.7ms | Allocations: 4125)
 
 
+Started GET "/restaurants" for ::1 at 2023-03-18 16:10:02 +0300
+Processing by RestaurantsController#index as */*
+  Parameters: {"price"=>40.0, "restaurant_id"=>6, "pizza_id"=>2, "restaurant"=>{}}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.5ms | Allocations: 4129)
+
+
+Started GET "/restaurant_pizzas" for ::1 at 2023-03-18 16:10:12 +0300
+Processing by RestaurantPizasController#index as */*
+  Parameters: {"price"=>40.0, "restaurant_id"=>6, "pizza_id"=>2, "restaurant_piza"=>{"price"=>40.0, "restaurant_id"=>6, "pizza_id"=>2}}
+  [1m[36mRestaurantPiza Load (0.2ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas"[0m
+  ↳ app/controllers/restaurant_pizas_controller.rb:5:in `index'
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.8ms | Allocations: 2487)
+
+
+Started GET "/restaurants" for ::1 at 2023-03-18 16:10:21 +0300
+Processing by RestaurantsController#index as */*
+  Parameters: {"price"=>40.0, "restaurant_id"=>6, "pizza_id"=>2, "restaurant"=>{}}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+Completed 200 OK in 5ms (Views: 5.0ms | ActiveRecord: 0.2ms | Allocations: 3989)
+
+
+Started GET "/restaurants/2" for ::1 at 2023-03-18 16:11:24 +0300
+Processing by RestaurantsController#show as */*
+  Parameters: {"price"=>40.0, "restaurant_id"=>6, "pizza_id"=>2, "id"=>"2", "restaurant"=>{}}
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.6ms | Allocations: 1856)
+
+
+  
+NameError (undefined local variable or method `restaurant_pizas' for #<RestaurantsController:0x00000000025cd8>
+Did you mean?  restaurant_pizzas_url):
+  
+app/controllers/restaurants_controller.rb:12:in `show'
+Started GET "/restaurants" for 127.0.0.1 at 2023-03-20 09:00:16 +0300
+Processing by RestaurantsController#index as HTML
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+Completed 200 OK in 32ms (Views: 29.9ms | ActiveRecord: 2.8ms | Allocations: 5298)
+
+
+Started GET "/restaurants/2" for ::1 at 2023-03-20 09:30:22 +0300
+Processing by RestaurantsController#show as */*
+  Parameters: {"price"=>40.0, "restaurant_id"=>6, "pizza_id"=>2, "id"=>"2", "restaurant"=>{}}
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 1.3ms | Allocations: 1856)
+
+
+  
+NameError (undefined local variable or method `restaurant_pizas' for #<RestaurantsController:0x000000000271a0>
+Did you mean?  restaurant_pizzas_url):
+  
+app/controllers/restaurants_controller.rb:12:in `show'
+Started GET "/restaurants" for ::1 at 2023-03-20 09:30:29 +0300
+Processing by RestaurantsController#index as */*
+  Parameters: {"price"=>40.0, "restaurant_id"=>6, "pizza_id"=>2, "restaurant"=>{}}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.2ms | Allocations: 5025)
+
+
+Started GET "/restaurants" for ::1 at 2023-03-20 09:30:48 +0300
+  
+SyntaxError (/home/rawllings/Development/code/phase4/pizza-restaurant/restaurant-app/app/controllers/restaurants_controller.rb:14: syntax error, unexpected local variable or method, expecting `end'
+...clude: :restaurant_pizas status: :ok
+...                         ^~~~~~
+):
+  
+app/controllers/restaurants_controller.rb:14: syntax error, unexpected local variable or method, expecting `end'
+app/controllers/restaurants_controller.rb:14: syntax error, unexpected local variable or method, expecting `end'
+Started GET "/restaurants" for ::1 at 2023-03-20 09:31:21 +0300
+Processing by RestaurantsController#index as */*
+  Parameters: {"price"=>40.0, "restaurant_id"=>6, "pizza_id"=>2, "restaurant"=>{}}
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+Completed 200 OK in 12ms (Views: 10.8ms | ActiveRecord: 1.1ms | Allocations: 5177)
+
+
+Started GET "/restaurants" for ::1 at 2023-03-20 09:31:42 +0300
+Processing by RestaurantsController#index as */*
+  Parameters: {"price"=>40.0, "restaurant_id"=>6, "pizza_id"=>2, "restaurant"=>{}}
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+Completed 200 OK in 12ms (Views: 10.2ms | ActiveRecord: 2.1ms | Allocations: 5159)
+
+
+Started GET "/restaurants/2" for ::1 at 2023-03-20 09:31:49 +0300
+Processing by RestaurantsController#show as */*
+  Parameters: {"price"=>40.0, "restaurant_id"=>6, "pizza_id"=>2, "id"=>"2", "restaurant"=>{}}
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.0ms | Allocations: 1845)
+
+
+  
+NameError (undefined local variable or method `restaurant_pizas' for #<RestaurantsController:0x0000000002a170>
+Did you mean?  restaurant_pizzas_url):
+  
+app/controllers/restaurants_controller.rb:12:in `show'
+Started GET "/restaurants/2" for ::1 at 2023-03-20 09:32:07 +0300
+Processing by RestaurantsController#show as */*
+  Parameters: {"price"=>40.0, "restaurant_id"=>6, "pizza_id"=>2, "id"=>"2", "restaurant"=>{}}
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.9ms | Allocations: 1855)
+
+
+  
+NameError (undefined local variable or method `restaurant_pizas' for #<RestaurantsController:0x0000000002b1d8>
+Did you mean?  restaurant_pizzas_url):
+  
+app/controllers/restaurants_controller.rb:12:in `show'
+Started GET "/restaurants" for ::1 at 2023-03-20 09:36:10 +0300
+Processing by RestaurantsController#index as */*
+  Parameters: {"price"=>40.0, "restaurant_id"=>6, "pizza_id"=>2, "restaurant"=>{}}
+  [1m[36mRestaurant Load (0.5ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/controllers/restaurants_controller.rb:6:in `index'
+Completed 200 OK in 13ms (Views: 11.7ms | ActiveRecord: 1.8ms | Allocations: 5158)
+
+
+Started GET "/restaurants/3" for ::1 at 2023-03-20 09:36:19 +0300
+Processing by RestaurantsController#show as */*
+  Parameters: {"price"=>40.0, "restaurant_id"=>6, "pizza_id"=>2, "id"=>"3", "restaurant"=>{}}
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms | Allocations: 1844)
+
+
+  
+NameError (undefined local variable or method `restaurant_pizas' for #<RestaurantsController:0x0000000002c2e0>
+Did you mean?  restaurant_pizzas_url):
+  
+app/controllers/restaurants_controller.rb:12:in `show'
+Started GET "/restaurants/3" for ::1 at 2023-03-20 09:36:43 +0300
+Processing by RestaurantsController#show as */*
+  Parameters: {"price"=>40.0, "restaurant_id"=>6, "pizza_id"=>2, "id"=>"3", "restaurant"=>{}}
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 3.3ms | Allocations: 1855)
+
+
+  
+NameError (undefined local variable or method `restaurant_pizas' for #<RestaurantsController:0x0000000002d3e8>
+Did you mean?  restaurant_pizzas_url):
+  
+app/controllers/restaurants_controller.rb:12:in `show'
+Started GET "/restaurants/3" for ::1 at 2023-03-20 09:37:18 +0300
+Processing by RestaurantsController#show as */*
+  Parameters: {"price"=>40.0, "restaurant_id"=>6, "pizza_id"=>2, "id"=>"3", "restaurant"=>{}}
+  [1m[36mRestaurant Load (1.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/restaurants_controller.rb:12:in `show'
+Completed 200 OK in 13ms (Views: 0.5ms | ActiveRecord: 6.0ms | Allocations: 1859)
+
+
+Started GET "/restaurants/3" for ::1 at 2023-03-20 09:37:45 +0300
+Processing by RestaurantsController#show as */*
+  Parameters: {"price"=>40.0, "restaurant_id"=>6, "pizza_id"=>2, "id"=>"3", "restaurant"=>{}}
+  [1m[36mRestaurant Load (0.4ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/restaurants_controller.rb:12:in `show'
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 1.8ms | Allocations: 4711)
+
+
+  
+NoMethodError (undefined method `restaurant_pizas' for #<Restaurant:0x00007f70d0812368>
+Did you mean?  RestaurantPizas
+               RestaurantPizas=
+               RestaurantPiza_ids):
+  
+app/controllers/restaurants_controller.rb:14:in `show'
+Started GET "/restaurants/3" for ::1 at 2023-03-20 09:38:16 +0300
+Processing by RestaurantsController#show as */*
+  Parameters: {"price"=>40.0, "restaurant_id"=>6, "pizza_id"=>2, "id"=>"3", "restaurant"=>{}}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/restaurants_controller.rb:12:in `show'
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 3.7ms | Allocations: 4729)
+
+
+  
+NoMethodError (undefined method `RestaurantPiza' for #<Restaurant:0x00007f70dd14aeb0>
+Did you mean?  RestaurantPizas
+               RestaurantPizas=
+               RestaurantPiza_ids):
+  
+app/controllers/restaurants_controller.rb:14:in `show'
+Started GET "/restaurants/3" for ::1 at 2023-03-20 09:38:29 +0300
+Processing by RestaurantsController#show as */*
+  Parameters: {"price"=>40.0, "restaurant_id"=>6, "pizza_id"=>2, "id"=>"3", "restaurant"=>{}}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/restaurants_controller.rb:12:in `show'
+  [1m[36mRestaurantPiza Load (0.2ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 3]]
+  ↳ app/controllers/restaurants_controller.rb:14:in `show'
+Completed 200 OK in 28ms (Views: 23.6ms | ActiveRecord: 1.8ms | Allocations: 5761)
+
+
+Started GET "/restaurants/2" for ::1 at 2023-03-20 09:38:44 +0300
+Processing by RestaurantsController#show as */*
+  Parameters: {"price"=>40.0, "restaurant_id"=>6, "pizza_id"=>2, "id"=>"2", "restaurant"=>{}}
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/restaurants_controller.rb:12:in `show'
+  [1m[36mRestaurantPiza Load (0.9ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas" WHERE "restaurant_pizas"."restaurant_id" = ?[0m  [["restaurant_id", 2]]
+  ↳ app/controllers/restaurants_controller.rb:14:in `show'
+Completed 200 OK in 9ms (Views: 6.7ms | ActiveRecord: 1.3ms | Allocations: 2840)
+
+
