@@ -3,7 +3,7 @@ class RestaurantsController < ApplicationController
     # Get all the restaurants
 def index
     restaurants = Restaurant.all
-    render json: restaurants,  includes: :Pizzas, status: :ok
+    render json: restaurants,  include: :RestaurantPizas, status: :ok
    
 end
 
