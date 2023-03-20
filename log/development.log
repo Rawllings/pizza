@@ -2115,3 +2115,55 @@ Processing by RestaurantsController#show as */*
 Completed 200 OK in 17ms (Views: 11.5ms | ActiveRecord: 1.8ms | Allocations: 9984)
 
 
+Started POST "/pizzas" for ::1 at 2023-03-20 12:49:01 +0300
+  
+ActionController::RoutingError (No route matches [POST] "/pizzas"):
+  
+Started POST "/" for ::1 at 2023-03-20 12:53:46 +0300
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+Started POST "/restaurant_pizas" for ::1 at 2023-03-20 12:55:12 +0300
+  
+ActionController::RoutingError (No route matches [POST] "/restaurant_pizas"):
+  
+Started POST "/restaurant_pizzas" for ::1 at 2023-03-20 12:55:39 +0300
+Processing by RestaurantPizasController#create as */*
+  Parameters: {"price"=>10.0, "restaurant_id"=>6, "pizza_id"=>2, "restaurant_piza"=>{"price"=>10.0, "restaurant_id"=>6, "pizza_id"=>2}}
+[31mUnpermitted parameter: :restaurant_piza. Context: { controller: RestaurantPizasController, action: create, request: #<ActionDispatch::Request:0x00007f70c835c768>, params: {"price"=>10.0, "restaurant_id"=>6, "pizza_id"=>2, "controller"=>"restaurant_pizas", "action"=>"create", "restaurant_piza"=>{"price"=>10.0, "restaurant_id"=>6, "pizza_id"=>2}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/restaurant_pizas_controller.rb:9:in `create'
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/restaurant_pizas_controller.rb:9:in `create'
+  [1m[36mPizza Load (0.1ms)[0m  [1m[34mSELECT "pizzas".* FROM "pizzas" WHERE "pizzas"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/restaurant_pizas_controller.rb:9:in `create'
+  [1m[36mRestaurantPiza Create (0.5ms)[0m  [1m[32mINSERT INTO "restaurant_pizas" ("price", "restaurant_id", "pizza_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["price", 10.0], ["restaurant_id", 6], ["pizza_id", 2], ["created_at", "2023-03-20 09:55:39.207528"], ["updated_at", "2023-03-20 09:55:39.207528"]]
+  ↳ app/controllers/restaurant_pizas_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (3.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/restaurant_pizas_controller.rb:9:in `create'
+Completed 201 Created in 21ms (Views: 0.2ms | ActiveRecord: 5.2ms | Allocations: 5412)
+
+
+Started POST "/restaurant_pizzas" for ::1 at 2023-03-20 12:55:45 +0300
+Processing by RestaurantPizasController#create as */*
+  Parameters: {"price"=>40.0, "restaurant_id"=>6, "pizza_id"=>2, "restaurant_piza"=>{"price"=>40.0, "restaurant_id"=>6, "pizza_id"=>2}}
+[31mUnpermitted parameter: :restaurant_piza. Context: { controller: RestaurantPizasController, action: create, request: #<ActionDispatch::Request:0x00007f70c8236488>, params: {"price"=>40.0, "restaurant_id"=>6, "pizza_id"=>2, "controller"=>"restaurant_pizas", "action"=>"create", "restaurant_piza"=>{"price"=>40.0, "restaurant_id"=>6, "pizza_id"=>2}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/restaurant_pizas_controller.rb:9:in `create'
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/restaurant_pizas_controller.rb:9:in `create'
+  [1m[36mPizza Load (0.1ms)[0m  [1m[34mSELECT "pizzas".* FROM "pizzas" WHERE "pizzas"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/restaurant_pizas_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/restaurant_pizas_controller.rb:9:in `create'
+Completed 422 Unprocessable Entity in 9ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 3474)
+
+
+Started GET "/restaurant_pizzas" for ::1 at 2023-03-20 12:55:53 +0300
+Processing by RestaurantPizasController#index as */*
+  Parameters: {"price"=>40.0, "restaurant_id"=>6, "pizza_id"=>2, "restaurant_piza"=>{"price"=>40.0, "restaurant_id"=>6, "pizza_id"=>2}}
+  [1m[36mRestaurantPiza Load (0.1ms)[0m  [1m[34mSELECT "restaurant_pizas".* FROM "restaurant_pizas"[0m
+  ↳ app/controllers/restaurant_pizas_controller.rb:5:in `index'
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.1ms | Allocations: 1470)
+
+
